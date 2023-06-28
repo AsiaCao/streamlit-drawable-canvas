@@ -123,19 +123,12 @@ const DrawableCanvas = ({ args }: ComponentProps) => {
    */
   useEffect(() => {
     if (backgroundImageURL) {
-      console.log(backgroundImageURL);
       var bgImage = new Image();
       bgImage.onload = function() {
         backgroundCanvas.getContext().drawImage(bgImage, 0, 0);
       };
-      const baseUrl = getStreamlitBaseUrl() ?? "";
-      console.log(baseUrl);
-      if (baseUrl === "") {
-        bgImage.src = backgroundImageURL
-      } else {
-        bgImage.src = baseUrl + "/" + backgroundImageURL
-      }
-      console.log(bgImage.src);
+      const baseUrl = getStreamlitBaseUrl() ?? ""
+      bgImage.src = baseUrl + backgroundImageURL
     }
   }, [
     canvas,
