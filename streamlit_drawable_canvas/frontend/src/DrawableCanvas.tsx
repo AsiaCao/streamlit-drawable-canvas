@@ -127,8 +127,15 @@ const DrawableCanvas = ({ args }: ComponentProps) => {
       bgImage.onload = function() {
         backgroundCanvas.getContext().drawImage(bgImage, 0, 0);
       };
-      const baseUrl = getStreamlitBaseUrl() ?? ""
-      bgImage.src = baseUrl + backgroundImageURL
+      const baseUrl = getStreamlitBaseUrl();
+      let imgSrc = "";
+      if (baseUrl) {
+        imgSrc = baseUrl + "/" + backgroundImageURL;
+        imgSrc = imgSrc.substring(0, 8) + imgSrc.substring(8).replaceAll("//", "/");
+      } else {
+        imgSrc = backgroundImageURL.replaceAll("//", "/");
+      }
+      bgImage.src = imgSrc;
     }
   }, [
     canvas,

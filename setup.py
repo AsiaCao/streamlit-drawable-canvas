@@ -14,14 +14,14 @@ def readme() -> str:
 
 
 setuptools.setup(
-    name="streamlit-drawable-canvas",
-    version="0.9.4",
+    name="landingai-streamlit-drawable-canvas",
+    version="0.9.8",
     author="Fanilo ANDRIANASOLO",
     author_email="contact@andfanilo.com",
     description="A Streamlit custom component for a free drawing canvas using Fabric.js.",
     long_description=readme(),
     long_description_content_type="text/markdown",
-    url="https://github.com/andfanilo/streamlit-drawable-canvas",
+    url="https://github.com/AsiaCao/streamlit-drawable-canvas",
     packages=setuptools.find_packages(),
     include_package_data=True,
     classifiers=[],
